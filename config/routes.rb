@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     :action => "flexible_payment"
     })
 
+  get("/flexible/random/:green/:red", {
+    :controller => "calculations",
+    :action => "flexible_random"
+    })
+
   get("/square/new", {
     :controller => "calculations",
     :action => "square_form"
