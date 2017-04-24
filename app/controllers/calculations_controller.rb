@@ -50,5 +50,42 @@ class CalculationsController < ApplicationController
     render("calculations/square.html.erb")
   end
 
+  def square_root_form
+  render("calculations/square_root_form.html.erb")
+  end
+
+  def square_root
+    @the_number =params[:user_number].to_f
+    render("calculations/square_root.html.erb")
+  end
+
+  def payment_form
+  render("calculations/payment_form.html.erb")
+  end
+
+  def payment
+    @the_basis_points = params["user_apr"].to_f
+    @number_of_years = params["user_years"].to_f
+    @loan_value = params["user_principal"].to_f
+
+    r = @the_basis_points / 100 / 12
+    n = @number_of_years * 12
+
+    @monthly_payment = @loan_value*(r*(1+r)**n)/((1+r)**n-1)
+    render("calculations/payment.html.erb")
+  end
+
+  def random_form
+  render("calculations/random_form.html.erb")
+  end
+
+  def random
+    @the_number_open = params["user_min"].to_f
+    @the_number_close = params["user_max"].to_f
+
+    @random_number = rand(@the_number_open..@the_number_close).round(0)
+
+  render("calculations/random.html.erb")  
+  end
 
 end

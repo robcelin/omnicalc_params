@@ -1,0 +1,11 @@
+<h1>
+  Random Results
+</h1>
+
+<p>
+A random number between <%= @the_number_open %> and <%= @the_number_close %> is <%= @random_number %>.
+</p>
+
+<p>
+<a href="/random/results/?user_min=<%= params['user_min'] %>&user_max=<%= params['user_max'] %>">Pick Another Random Number</a>
+</p>
