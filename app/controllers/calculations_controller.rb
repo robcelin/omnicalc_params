@@ -55,7 +55,7 @@ class CalculationsController < ApplicationController
   end
 
   def square_root
-    @the_number =params[:user_number].to_f
+    @the_number =params[:user_number1].to_f
     render("calculations/square_root.html.erb")
   end
 
@@ -85,7 +85,7 @@ class CalculationsController < ApplicationController
 
     @random_number = rand(@the_number_open..@the_number_close).round(0)
 
-  render("calculations/random.html.erb")  
+  render("calculations/random.html.erb")
   end
 
 end
